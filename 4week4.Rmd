@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+#R WEEK4 TESTING
+
+```{r}  
+x<-1  
+y<-2  
+z<-3  
+a<-x+y+z  
+a  
+a*3
+
+
+```  
+---  
+
+*斜體*  
+**粗體**  
+***粗斜體*** 
+---   
+
+先把要存的目的資料夾BASH  
+git clone +github網址 +資料夾名稱  
+git config --local user.name"名稱"  
+git config --local user.mail"帳號"  
+
+---  
+1. 這是1  
+1. 這是2  
+1. 標題可以只打1.  
+1. 尾巴+2個空格以上就是斷行    

@@ -1,4 +1,5 @@
 
+
 mm<-function(rcnt,ccnt,init){
   total<-rcnt*ccnt  
   v<-double(total)  

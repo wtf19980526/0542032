@@ -45,9 +45,16 @@ for(item in x ){
 }
 ```         
 ```{r}
-A<-function(Afile){
-}
-dir(path="C:\W11\W11")
+A<-function(A1){
+
+dir(path="C:\\W11\\W11")
+file.exists("4week4.Rmd")
+B<-dir(path="C:\\W11\\W11")
+C<-length(B[B==A1])
+return(C>0)  
+}  
+
+A("4week4.Rmd")
 ```
 
 

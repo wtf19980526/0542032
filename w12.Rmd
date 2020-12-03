@@ -1,0 +1,24 @@
+```{r}
+x<- read.csv("trees91.csv")
+x$C <- factor(x$C)  
+x$N <- factor(x$N)  
+table(x$C)
+barplot(table(x$C))  
+```  
+
+
+
+```{r}  
+x<- read.csv("trees911.csv",encoding="UTF-8")  
+x$`哈哈`<-factor(x$`哈哈`)
+table(x$`哈哈`)
+```  
+
+```{r}  
+paste0("a","b")  #  "a"  +  "b" =  "a+b"
+paste0("a","b",collapse="-----")  
+paste0(c("a","b"),c(1,2))  
+paste0(c("a","b"),c(1,2),collapse="<--->")  
+print("----------")
+paste0("a","b",seq="") == paste0("a","b")
+```

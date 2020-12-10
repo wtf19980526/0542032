@@ -1,0 +1,44 @@
+```{r}
+dn<-data()  
+str(dn)
+```  
+```{r}  
+attributes(dn)
+```
+```{r}
+dn$results
+```  
+```{r}
+class(dn$results)  ##dn是矩陣
+```  
+```{r}        
+dn$results[,3]
+```
+
+
+```{r}
+isDsExists<-function(given){
+dimnames(dn$results)  
+class(dn$results)  
+dsname<- dn$results[,"Item"]    
+rst<- length(dsname[dsname==given])  
+if(rst!=0){
+return(T)
+}  
+else{  
+  return(F)
+}
+}
+x<-function(given){
+  dn<-data()  
+  dsname<-dn$results[,"Item"]  
+  return(any(dsname==given))
+}
+```
+```{r}
+library(DT)
+datatable(cars)
+
+```
+
+

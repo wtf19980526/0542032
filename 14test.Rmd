@@ -1,0 +1,23 @@
+```{r}  
+library(DT)
+fm<- read.csv(file="c:/w14/w14/wh.csv",header=T,comment.char="#", as.is=T)  
+fm$weight<- as.numeric(fm$weight)
+
+```
+
+
+
+```{r}  
+library(DT)
+ms<-installed.packages()
+fm <- data.frame(ms)
+col1<-fm$Package
+col2<-fm$Libpath
+col3<-fm$Version
+fm3<-data.frame(col1,col2,col3)
+colnames(fm3)<-c("套件","路徑","版本") ###無法
+datatable(fm3,rownames = F)
+writ.csv(fm3,file="c:/w14/w14/foo.csv",row.names = F)
+fm3<- fm[,1:3]
+
+```

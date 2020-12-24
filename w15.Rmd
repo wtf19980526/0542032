@@ -1,0 +1,43 @@
+```{r}  
+library("AER")
+data("Journals",packages = "AER")
+journals <- Journals[, c("subs","price")]
+journals$citeprice <- Journals$price/Journals$citation
+summary(journals)
+mm<-lm(subs~citeprice,data=journals)
+```
+
+```{r} 
+library("AER")
+data("Journals",packages = "AER")
+journals <- Journals[, c("subs","price")]
+journals$citeprice <- Journals$price/Journals$citation
+journals$lsubs<- log (journals$subs)
+journals$lciteprice<- log (journals$citeprice)  
+
+plot(lsubs ~ lciteprice, data = journals)
+jour_lm <- lm(lsubs ~ lciteprice , data = journals)
+abline(jour_lm)
+anova(jour_lm)
+linearHypothesis(jour_lm , "lciteprice = -0.5")
+
+```
+
+
+
+```{r}
+ 
+ 
+data(cars) 
+summary(cars)   
+cars$lspeed<-log(cars$speed)   
+###cars$speed  cars 裡面的speed欄位
+cars$ldist<-log(cars$dist)  
+plot(lspeed ~ ldist, data = cars)   
+### y = x (lspeed=y,ldist=x) 
+jour_lm <- lm(lspeed ~ ldist , data = cars)
+abline(jour_lm)
+anova(jour_lm)
+linearHypothesis(jour_lm , "ldist = -0.5") ###檢測值是否=-0.5
+
+```

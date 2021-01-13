@@ -1,0 +1,87 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+install.packages("UsingR")
+library(UsingR)
+data(ewr)
+
+```{r}
+a=read.csv("C:/0542032/0542032/mathstat.csv", header = T)
+a
+head(a)
+dim(a)
+stem(a$maths)
+stem(a$stats)
+par(mfrow=c(1,2))
+hist(a$maths);hist(a$stats)
+par(mfrow=c(1,1))
+stem(a$maths)
+stem(a$stats)
+
+EDA<- function(x)
+{
+  par(mfrow=c(2,2))
+  hist(x)
+  density(x)
+  dotchart(x)
+  boxplot(x,horizontal=T)
+  qqnorm(x);qqline(x)
+  par(mfrow=c(1,1))
+}
+
+EDA(a$maths)
+```  
+
+
+
+
+```{r}
+MS=read.csv("C:/0542032/0542032/mathstat.csv", header = T)
+MS
+head(MS)
+dim(MS)
+stem(MS$maths)
+stem(MS$stats)
+par(mfrow=c(1,2))
+hist(MS$maths);hist(MS$stats)
+par(mfrow=c(1,1))
+stem(MS$maths)
+stem(MS$stats)
+
+source("EDA.R")
+EDA(MS$maths)
+EDA(MS$stats)
+```
+```{r}
+rr
+```
+
+##
+```{r}
+MS=read.csv("C:/0542032/0542032/mathstat.csv", header = T)
+qqplot(MS$maths,MS$stats)
+```
+
+##
+```{r}
+rr <- runif(10000)
+MS=read.csv("C:/0542032/0542032/mathstat.csv", header = T)
+qqplot(MS$maths,rr)
+qqplot(MS$stats,rr)
+```
+
+##
+```{r}
+r1 <- runif(10000)
+r2 <- rnorm(20000)
+qqplot(r1,r1)
+```
+
